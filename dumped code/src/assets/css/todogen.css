@@ -1,0 +1,43 @@
+#todogencomp {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 11;
+}
+
+@media screen and (min-width:1000px) {
+    #todogencomp {
+        height: 500px;
+        width: 800px;
+    }
+}
+@media screen and (min-width:768px) and (max-width:1000px) {
+    #todogencomp {
+        height: 500px;
+        width: 600px;
+    }
+}
+@media screen and (min-width:500px) and (max-width:768px){
+    #todogencomp {
+        height: 350px;
+        width: 400px;
+        top:0%;
+        left: 50%;
+        transform: translate(-50%, 10%);
+    }
+}
+@media screen and (max-width:500px){
+    #todogencomp {
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%, 10%);
+        height: 300px;
+        width: 200px;
+    }
+}

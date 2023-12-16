@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#herodiv {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+
+#content {
+    background-color: #fff;
+    height: 650px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px black;
+}
+
+#modal-wrapper {
+    position: absolute;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    background: black;
+    opacity: 50%;
+    top: 0;
+    overflow: hidden;
+    scroll-behavior: none;
+    left: 0;
+
+}
+
+@media screen and (min-width:800px) {
+    body {
+        padding: 40px 100px;
+        background: purple;
+    }
+
+}

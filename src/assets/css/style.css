@@ -1,0 +1,385 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@media screen and (min-width:800px) {
+    #content {
+        border-radius: 10px;
+        box-shadow: 0 0 20px black;
+    }
+
+    body {
+        padding: 50px 80px;
+        background-color: purple;
+    }
+}
+
+body {
+    height: 100dvh;
+    width: 100dvw;
+}
+
+#content {
+    background: #d1d1d1;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#hero {
+    height: 100px;
+    width: 100%;
+    background-color: rgb(252, 131, 71);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+}
+
+#hero>h1 {
+    margin: auto 0 auto 20px;
+    padding: 10px;
+    color: white;
+}
+
+#navul {
+    list-style: none;
+    display: flex;
+    width: 160px;
+    flex-direction: column;
+}
+
+@media screen and (min-width:800px) {
+    #navbar {
+        background-color: #e1e1e1;
+        width: 160px;
+        border-bottom-left-radius: 10px;
+    }
+}
+
+#navbar {
+    height: calc(100% - 100px);
+    background-color: #e1e1e1;
+    width: 160px;
+}
+
+.navdiv {
+    display: flex;
+    justify-content: space-between;
+    width: 160px;
+    height: 50px;
+    padding: 10px 20px 10px 20px;
+    font-weight: 900;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navdiv:hover {
+    background-color: #fff;
+}
+
+.navlink {
+    text-decoration: none;
+    color: black;
+}
+
+.addbtn {
+    all: unset;
+    cursor: pointer;
+}
+
+#modalWrapper {
+    display: none;
+    z-index: 10;
+    background-color: rgba(82, 80, 80, 0.449);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#pcvd {
+    height: 20px;
+    width: 20px;
+    transition: transform 200ms ease-in-out;
+}
+
+
+.AdderModalContainer {
+    background-color: #fff;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 11;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 400px;
+    width: 600px;
+}
+
+.adderHero {
+    background-color: rgb(255, 140, 0);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 20px;
+    color: white;
+}
+
+#projAdderinpsContainer {
+    overflow: auto;
+    height: calc(100% - 78px);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.adderContainer {
+    height: calc(100% - 78px);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+textarea {
+    padding: 4px 10px;
+    border: none;
+    resize: none;
+    display: block;
+    width: 100%;
+    min-height:65px ;
+    font-size: 20px;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+.adderbtn {
+    all: unset;
+    text-align: center;
+    margin-top: auto;
+    width: 100%;
+    background-color: #ffffff00;
+    cursor: pointer;
+    border: 1px solid orangered;
+    border-radius: 5px;
+}
+
+.projtasks {
+    border-radius: 10px;
+    background-color: black;
+    padding: 10px;
+    margin: 10px 0px;
+}
+
+.precedenceSelect {
+    margin: auto 10px 10px 10px;
+    border-radius: 5px;
+    width: 200px;
+    height: 35px;
+    font-size: 20px;
+    text-align: center;
+    background-color: green;
+    color: white;
+}
+
+.ProjpreSel {
+    margin: 10px 10px 10px 0px;
+    width: 200px;
+    height: 35px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.projDueDate {
+    margin: 10px 10px 10px 0px;
+    font-size: 20px;
+    height: 35px;
+}
+
+.dueDate {
+    margin: auto 10px 10px 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    height: 35px;
+}
+
+option {
+    text-align: center;
+}
+
+#addmoretasks {
+    margin: 10px 0px;
+}
+
+#projectbtn {
+    all: unset;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px 10px 20px;
+    width: 160px;
+    height: 50px;
+    font-weight: 900;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+#projectbtn:hover {
+    background-color: #fff;
+}
+
+@keyframes ulfadeinout {
+    from{
+        opacity: 0;
+        height: 0;
+    }
+    to{
+        opacity: 1;
+        height: fit-content ;
+    }
+}
+
+#projectsul {
+    list-style: none;
+}
+
+.projulhidden {
+    display: none;
+    opacity: 0;
+}
+
+.projulshown {
+    display: block;
+    animation: ulfadeinout 200ms forwards;
+}
+
+.projnavlink {
+    background-color: #f1f1f1;
+    display: block;
+    text-decoration: none;
+    color: black;
+    width: 160px;
+    height: 40px;
+    font-size: 20px;
+    padding: 10px 10px 10px 40px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.projnavlink:hover {
+    background-color: #fff;
+}
+
+.projCompcl {
+    width: calc(100% - 160px);
+}
+
+.projttl {
+    width: 100%;
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.projdes {
+    width: 100%;
+    background: #fcfcfc;
+    padding: 10px;
+}
+
+.projtaskscontainerdiv {
+    background: #f9f9f9;
+}
+
+.taskdiv {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.checkbox {
+    margin-right: 20px;
+}
+
+.tasktitle {
+    margin: 0px 20px 0px 0px;
+    font-weight: 900;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.taskdldate {
+    border: 1px solid #a1a1a1;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 0px 20px 0px auto;
+
+}
+
+.detailstaskbtn {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.deltaskbtn,
+.edittaskbtn {
+    all: unset;
+    box-sizing: border-box;
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+    cursor: pointer;
+
+}
+
+
+.deltaskbtn:hover .deleteicon {
+    fill: red;
+}
+
+.edittaskbtn:hover .editicon,
+.edittaskbtn:hover .editiconPath2 {
+
+    fill: rgb(10, 250, 10);
+}
+#week,#today,#home,#notes{
+    width: calc(100% - 160px);
+    background-color: #fff;
+}
+#week>.taskdiv,#today>.taskdiv,#home>.taskdiv{
+    margin-top: 5px;
+    background-color: #f1f1f1;
+}
+.notesdiv{
+    width: 50%;
+    margin: 5px;
+    background-color: #f1f1f1;
+}
+.notestitlediv{
+    display: flex;
+    align-items: center;
+}
+.notestitle{
+    padding: 10px;
+    font-size: 20px;
+}
+.notestitlediv>.editnotesbtn{
+    margin:10px 10px 10px auto;
+}
+.notestitlediv>.delnotesbtn{
+    margin-right: 10px;
+}
+.notesdescription{
+    padding: 10px;
+}
