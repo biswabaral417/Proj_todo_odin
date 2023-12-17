@@ -19,8 +19,7 @@ const navbtnfns = () => {
             addbtn.addEventListener('click',(e)=>{
                 e.preventDefault()
                 e.stopPropagation()
-                adderModal(e)
-
+                adderModal(e.target.id.slice(3))
             })
         }
         item.addEventListener('click', (e) => {

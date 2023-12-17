@@ -1,5 +1,6 @@
 
 import { home } from "../functions/todo"
+import component from "../modules/component"
 import elemcreater from "../modules/elemcreator"
 import localstoragesave from "../modules/localstoragesave"
 
@@ -11,8 +12,8 @@ const addhome = () => {
     }))
     modalWrapper.style.display = 'none'
     document.querySelector(".AdderModalContainer") && document.querySelectorAll(".AdderModalContainer").forEach(a => { a.remove() })
-    window.location.reload()
-}
+    component('home')
+    }
 const homeAdderModal = () => {
     elemcreater({ prop: 'h1#homeAdderHero.adderHero', parentId: 'homeAdderModal', text: "Create task for home" })
     elemcreater({ prop: `div#homeAdderinpsContainer.adderContainer`, parentId: `homeAdderModal` })
@@ -21,8 +22,6 @@ const homeAdderModal = () => {
 
     elemcreater({ prop: `button#homeAdderBtn.adderbtn`, text: 'Add home tasks', parentId: 'homeAdderinpsContainer' })
 
-    document.getElementById('homeAdderBtn').addEventListener('click', () => {
-        addhome()
-    })
+    document.getElementById('homeAdderBtn').addEventListener('click',addhome)
 }
 export default homeAdderModal

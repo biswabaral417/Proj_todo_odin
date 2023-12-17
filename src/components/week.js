@@ -1,8 +1,10 @@
 import elemcreater from "../modules/elemcreator";
 import svge from "../functions/svgdelndedit";
-const week=()=>{
+import deletetask from "../functions/deletetask";
+
+const week = () => {
     if (localStorage.getItem('week')) {
-        JSON.parse(localStorage.getItem('week')).forEach((e,i) => {
+        JSON.parse(localStorage.getItem('week')).forEach((e, i) => {
             elemcreater({ prop: `div#task_${i}.taskdiv`, parentId: `week` })
             elemcreater({ prop: `input#checkbox_${i}.checkbox type='checkbox'`, parentId: `task_${i}` })
             elemcreater({ prop: `p#titletask_${i}.tasktitle'`, parentId: `task_${i}`, text: e.task })
@@ -10,10 +12,10 @@ const week=()=>{
             elemcreater({ prop: `button#details_${i}btn.detailstaskbtn`, parentId: `task_${i}`, text: 'details' })
             elemcreater({ prop: `button#edit_${i}btn.edittaskbtn`, parentId: `task_${i}` })
             elemcreater({ prop: `button#delete_${i}btn.deltaskbtn`, parentId: `task_${i}` })
-            svge({edparent:`edit_${i}btn`,delparent:`delete_${i}btn`})
-
-
-            
+            svge({ edparent: `edit_${i}btn`, delparent: `delete_${i}btn` })
+            document.getElementById(`delete_${i}btn`).addEventListener('click', () => {
+                deletetask({index:i,type:'week'})
+            })
         });
     }
 

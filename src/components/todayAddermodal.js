@@ -3,8 +3,10 @@ import precedenceSel from "../functions/precedenceSel"
 import { today } from "../functions/todo"
 import elemcreater from "../modules/elemcreator"
 import localstoragesave from "../modules/localstoragesave"
+import component from "../modules/component"
 
 const addtoday = () => {
+    console.log('hello')
     localstoragesave('today', today({
         task: document.getElementById('todayTitleIn').value,
         description: document.getElementById(`todayDescriptionIn`).value,
@@ -13,11 +15,8 @@ const addtoday = () => {
     }))
     modalWrapper.style.display = 'none'
     document.querySelector(".AdderModalContainer") && document.querySelectorAll(".AdderModalContainer").forEach(a => { a.remove() })
-    window.location.reload()
-
+    component('today')
 }
-
-
 const todayAdderModal = () => {
     elemcreater({ prop: 'h1#todayAdderHero.adderHero', parentId: 'todayAdderModal', text: "Create task for today" })
     elemcreater({ prop: `div#todayAdderinpsContainer.adderContainer`, parentId: `todayAdderModal` })
@@ -32,8 +31,6 @@ const todayAdderModal = () => {
     precedenceSel()
     elemcreater({ prop: `button#todayAdderBtn.adderbtn`, text: 'Add tasks for today', parentId: 'todayAdderinpsContainer' })
 
-    document.getElementById('todayAdderBtn').addEventListener('click', () => {
-        addtoday()
-    })
+    document.getElementById('todayAdderBtn').addEventListener('click', addtoday)
 }
 export default todayAdderModal

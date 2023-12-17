@@ -1,5 +1,6 @@
 import precedenceSel from "../functions/precedenceSel"
 import { week } from "../functions/todo"
+import component from "../modules/component"
 import elemcreater from "../modules/elemcreator"
 import localstoragesave from "../modules/localstoragesave"
 
@@ -12,8 +13,7 @@ const addweeks = () => {
     }))
     modalWrapper.style.display = 'none'
     document.querySelector(".AdderModalContainer") && document.querySelectorAll(".AdderModalContainer").forEach(a => { a.remove() })
-    window.location.reload()
-
+    component('week')
 }
 
 
@@ -31,8 +31,6 @@ const weekAdderModal = () => {
     precedenceSel()
     elemcreater({ prop: `button#weekAdderBtn.adderbtn`, text: 'Add tasks for this week', parentId: 'weekAdderinpsContainer' })
 
-    document.getElementById('weekAdderBtn').addEventListener('click', () => {
-        addweeks()
-    })
+    document.getElementById('weekAdderBtn').addEventListener('click', addweeks)
 }
 export default weekAdderModal

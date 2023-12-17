@@ -138,6 +138,9 @@ body {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+.editbtn:hover,.adderbtn:hover{
+    background-color: #c1c1c1;
+}
 
 .adderContainer {
     height: calc(100% - 78px);
@@ -154,15 +157,18 @@ textarea {
     resize: none;
     display: block;
     width: 100%;
-    min-height:65px ;
     font-size: 20px;
+}
+
+#projtextareaContainer {
+    min-height: 130px;
 }
 
 textarea:focus {
     outline: none;
 }
 
-.adderbtn {
+.adderbtn,.editbtn {
     all: unset;
     text-align: center;
     margin-top: auto;
@@ -240,13 +246,14 @@ option {
 }
 
 @keyframes ulfadeinout {
-    from{
+    from {
         opacity: 0;
         height: 0;
     }
-    to{
+
+    to {
         opacity: 1;
-        height: fit-content ;
+        height: fit-content;
     }
 }
 
@@ -333,6 +340,8 @@ option {
 }
 
 .deltaskbtn,
+.delnotesbtn,
+.editnotesbtn,
 .edittaskbtn {
     all: unset;
     box-sizing: border-box;
@@ -343,43 +352,53 @@ option {
 
 }
 
-
-.deltaskbtn:hover .deleteicon {
+.deltaskbtn:hover .deleteicon ,.delnotesbtn:hover .deleteicon{
     fill: red;
 }
 
-.edittaskbtn:hover .editicon,
-.edittaskbtn:hover .editiconPath2 {
-
+.edittaskbtn:hover .editicon, .editnotesbtn:hover .editicon {
     fill: rgb(10, 250, 10);
 }
-#week,#today,#home,#notes{
+
+#week,
+#today,
+#home,
+#notes {
     width: calc(100% - 160px);
     background-color: #fff;
 }
-#week>.taskdiv,#today>.taskdiv,#home>.taskdiv{
+
+#week>.taskdiv,
+#today>.taskdiv,
+#home>.taskdiv {
     margin-top: 5px;
     background-color: #f1f1f1;
 }
-.notesdiv{
+
+.notesdiv {
     width: 50%;
     margin: 5px;
     background-color: #f1f1f1;
 }
-.notestitlediv{
+
+.notestitlediv {
     display: flex;
     align-items: center;
 }
-.notestitle{
+
+.notestitle {
     padding: 10px;
     font-size: 20px;
 }
-.notestitlediv>.editnotesbtn{
-    margin:10px 10px 10px auto;
+
+.notestitlediv>.editnotesbtn {
+    margin: 10px 10px 10px auto;
 }
-.notestitlediv>.delnotesbtn{
+
+.notestitlediv>.delnotesbtn {
     margin-right: 10px;
 }
-.notesdescription{
+
+.notesdescription {
     padding: 10px;
 }

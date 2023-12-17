@@ -1,5 +1,7 @@
 import elemcreater from "../modules/elemcreator";
 import svge from "../functions/svgdelndedit";
+import deletetask from "../functions/deletetask";
+import edittasks from "../functions/edittasks";
 const today = () => {
     if (localStorage.getItem('today')) {
         JSON.parse(localStorage.getItem('today')).forEach((e, i) => {
@@ -11,8 +13,12 @@ const today = () => {
             elemcreater({ prop: `button#edit_${i}btn.edittaskbtn`, parentId: `task_${i}` })
             elemcreater({ prop: `button#delete_${i}btn.deltaskbtn`, parentId: `task_${i}` })
             svge({ edparent: `edit_${i}btn`, delparent: `delete_${i}btn` })
-
-
+            document.getElementById(`delete_${i}btn`).addEventListener('click', () => {
+                deletetask({ index: i, type: 'today' })
+            })
+            document.getElementById(`edit_${i}btn`).addEventListener('click', () => {
+                edittasks({ index: i, type: 'today' })
+            })
 
         });
     }

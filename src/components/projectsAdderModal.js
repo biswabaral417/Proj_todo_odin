@@ -17,7 +17,6 @@ const addProjects = () => {
     modalWrapper.style.display = 'none'
     document.querySelector(".AdderModalContainer") && document.querySelectorAll(".AdderModalContainer").forEach(a => { a.remove() })
     window.location.reload()
-
 }
 let i = 0
 const addTasks = () => {
@@ -40,10 +39,12 @@ const addTasks = () => {
     i++
 }
 const projectsAdderModal = () => {
+
     elemcreater({ prop: 'h1#projAdderHero.adderHero', parentId: 'projAdderModal', text: "Create New projects" })
     elemcreater({ prop: 'div#projAdderinpsContainer.adderContainer', parentId: 'projAdderModal' })
-    elemcreater({ prop: `textarea#projTitleIn.Intitle placeholder='Title'`, parentId: 'projAdderinpsContainer' })
-    elemcreater({ prop: `textarea#projDescriptionIn.notesdes placeholder='Description'`, parentId: 'projAdderinpsContainer' })
+    elemcreater({prop:`div#projtextareaContainer`,parentId:'projAdderinpsContainer'})
+    elemcreater({ prop: `textarea#projTitleIn.Intitle placeholder='Title'`, parentId: 'projtextareaContainer' })
+    elemcreater({ prop: `textarea#projDescriptionIn.notesdes placeholder='Description'`, parentId: 'projtextareaContainer' })
     elemcreater({ prop: `div#projtasksdiv`, parentId: "projAdderinpsContainer" })
     addTasks()
     elemcreater({ prop: `button#addmoretasks`, text: 'add one more task', parentId: `projAdderinpsContainer` })

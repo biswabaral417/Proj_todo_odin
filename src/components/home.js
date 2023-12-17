@@ -1,5 +1,5 @@
 import elemcreater from "../modules/elemcreator";
-
+import deletetask from "../functions/deletetask";
 import svge from "../functions/svgdelndedit";
 const home = () => {
 
@@ -14,7 +14,9 @@ const home = () => {
             elemcreater({ prop: `button#delete_${i}btn.deltaskbtn`, parentId: `task_${i}` })
             svge({ edparent: `edit_${i}btn`, delparent: `delete_${i}btn` })
 
-
+            document.getElementById(`delete_${i}btn`).addEventListener('click', () => {
+                deletetask({ index: i, type: 'home' })
+            })
 
         });
     }

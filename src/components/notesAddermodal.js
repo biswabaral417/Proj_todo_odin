@@ -1,4 +1,5 @@
 import { notes } from "../functions/todo"
+import component from "../modules/component"
 import elemcreater from "../modules/elemcreator"
 import localstoragesave from "../modules/localstoragesave"
 const addnotes = () => {
@@ -10,8 +11,7 @@ const addnotes = () => {
     }))
     modalWrapper.style.display = 'none'
     document.querySelector(".AdderModalContainer") && document.querySelectorAll(".AdderModalContainer").forEach(a => { a.remove() })
-    window.location.reload()
-
+    component('notes')
 }
 const notesAdderModal = () => {
     elemcreater({ prop: 'h1#notesAdderHero.adderHero', parentId: 'notesAdderModal', text: "Create New notes" })
@@ -19,9 +19,7 @@ const notesAdderModal = () => {
     elemcreater({ prop: `textarea#notesTitleIn.Intitle placeholder='Title'`, parentId: 'notesAdderinpsContainer' })
     elemcreater({ prop: `textarea#notesDescriptionIn.notesdes placeholder='Description'`, parentId: 'notesAdderinpsContainer' })
     elemcreater({ prop: `button#notesAdderBtn.adderbtn`, text: 'Add Note', parentId: 'notesAdderinpsContainer' })
-    document.getElementById('notesAdderBtn').addEventListener('click', () => {
-        addnotes()
-    })
+    document.getElementById('notesAdderBtn').addEventListener('click', addnotes)
 
 }
 export default notesAdderModal
