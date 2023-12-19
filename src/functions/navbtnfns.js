@@ -9,8 +9,8 @@ const navbtnfns = () => {
     addbtn.addEventListener('click',(e)=>{
         e.preventDefault()
         e.stopPropagation()
-        adderModal(e)
-        console.log('clicked')
+    
+        adderModal('project')
     })
     }
     document.querySelectorAll('.linkbtn').forEach(item => {

@@ -53,7 +53,7 @@ const notes = ({ title, description }) => {
 }
 
 export {
-    notes,home,week,today,projects
+    notes,home,week,today,projects,todo
 }
 
 

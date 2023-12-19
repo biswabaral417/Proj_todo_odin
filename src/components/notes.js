@@ -1,6 +1,7 @@
 import elemcreater from "../modules/elemcreator";
 import svge from "../functions/svgdelndedit";
 import deletetask from "../functions/deletetask";
+import edittasks from "../functions/edittasks";
 const notes=()=>{
     if (localStorage.getItem('notes')) {
         JSON.parse(localStorage.getItem('notes')).forEach((e, i) => {
@@ -13,6 +14,9 @@ const notes=()=>{
             svge({ edparent: `edit_${i}btn`, delparent: `delete_${i}btn` })
             document.getElementById(`delete_${i}btn`).addEventListener('click', () => {
                 deletetask({ index: i, type: 'notes' })
+            })
+            document.getElementById(`edit_${i}btn`).addEventListener('click', () => {
+                edittasks({ index: i, type: 'notes' })
             })
 
         });

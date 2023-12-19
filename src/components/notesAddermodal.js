@@ -3,7 +3,6 @@ import component from "../modules/component"
 import elemcreater from "../modules/elemcreator"
 import localstoragesave from "../modules/localstoragesave"
 const addnotes = () => {
-    console.log('clicked')
     localstoragesave('notes', notes({
         title: document.getElementById('notesTitleIn').value,
         description: document.getElementById('notesDescriptionIn').value

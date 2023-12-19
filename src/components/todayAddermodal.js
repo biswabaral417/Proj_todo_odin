@@ -6,7 +6,6 @@ import localstoragesave from "../modules/localstoragesave"
 import component from "../modules/component"
 
 const addtoday = () => {
-    console.log('hello')
     localstoragesave('today', today({
         task: document.getElementById('todayTitleIn').value,
         description: document.getElementById(`todayDescriptionIn`).value,

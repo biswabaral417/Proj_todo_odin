@@ -138,7 +138,9 @@ body {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
-.editbtn:hover,.adderbtn:hover{
+
+.editbtn:hover,
+.adderbtn:hover {
     background-color: #c1c1c1;
 }
 
@@ -168,7 +170,8 @@ textarea:focus {
     outline: none;
 }
 
-.adderbtn,.editbtn {
+.adderbtn,
+.editbtn {
     all: unset;
     text-align: center;
     margin-top: auto;
@@ -258,6 +261,8 @@ option {
 }
 
 #projectsul {
+    overflow: scroll;
+    max-height: 200px;
     list-style: none;
 }
 
@@ -297,7 +302,7 @@ option {
     width: 100%;
     background-color: #fff;
     padding: 10px;
-    text-align: center;
+    display: flex;
 }
 
 .projdes {
@@ -342,7 +347,9 @@ option {
 .deltaskbtn,
 .delnotesbtn,
 .editnotesbtn,
-.edittaskbtn {
+.edittaskbtn,
+.projedittaskbtn,
+.projdeltaskbtn {
     all: unset;
     box-sizing: border-box;
     height: 30px;
@@ -352,11 +359,20 @@ option {
 
 }
 
-.deltaskbtn:hover .deleteicon ,.delnotesbtn:hover .deleteicon{
+.projedittaskbtn {
+    margin-left: auto;
+
+}
+
+.deltaskbtn:hover .deleteicon,
+.delnotesbtn:hover .deleteicon,
+.projdeltaskbtn:hover .deleteicon {
     fill: red;
 }
 
-.edittaskbtn:hover .editicon, .editnotesbtn:hover .editicon {
+.edittaskbtn:hover .editicon,
+.editnotesbtn:hover .editicon,
+.projedittaskbtn:hover .editicon {
     fill: rgb(10, 250, 10);
 }
 
@@ -401,4 +417,13 @@ option {
 
 .notesdescription {
     padding: 10px;
+}
+
+#projtaskseditAdderinpsContainer>#DueDatein {
+    margin: auto 10px 10px 10px;
+    border-radius: 5px;
+    width: 200px;
+    height: 35px;
+    font-size: 20px;
+
 }

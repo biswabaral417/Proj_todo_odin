@@ -40,8 +40,8 @@ const addTasks = () => {
 }
 const projectsAdderModal = () => {
 
-    elemcreater({ prop: 'h1#projAdderHero.adderHero', parentId: 'projAdderModal', text: "Create New projects" })
-    elemcreater({ prop: 'div#projAdderinpsContainer.adderContainer', parentId: 'projAdderModal' })
+    elemcreater({ prop: 'h1#projAdderHero.adderHero', parentId: 'projectAdderModal', text: "Create New projects" })
+    elemcreater({ prop: 'div#projAdderinpsContainer.adderContainer', parentId: 'projectAdderModal' })
     elemcreater({prop:`div#projtextareaContainer`,parentId:'projAdderinpsContainer'})
     elemcreater({ prop: `textarea#projTitleIn.Intitle placeholder='Title'`, parentId: 'projtextareaContainer' })
     elemcreater({ prop: `textarea#projDescriptionIn.notesdes placeholder='Description'`, parentId: 'projtextareaContainer' })

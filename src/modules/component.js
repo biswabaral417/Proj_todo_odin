@@ -14,7 +14,7 @@ const comps = {
     'today': today,
     'week': week,
     'notes': notes,
-    'projAdderModal': projectsAdderModal,
+    'projectAdderModal': projectsAdderModal,
     'weekAdderModal': weekAdderModal,
     'todayAdderModal': todayAdderModal,
     'notesAdderModal': notesAdderModal,
@@ -27,7 +27,6 @@ const component = (c) => {
             document.getElementById('content').children[2].remove()
         }
     }
-    
     if (!document.getElementById(c)||document.getElementById(c)=='null') {
         const comp = document.createElement('div')
         comp.id = c

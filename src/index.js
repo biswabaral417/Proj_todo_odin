@@ -17,4 +17,3 @@ if (window.location.pathname === '/Proj_todo_odin/') {
     component(window.location.pathname.substring(16));
 }
 
-console.log(window.location.pathname)

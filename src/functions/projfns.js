@@ -3,18 +3,19 @@ import elemcreater from "../modules/elemcreator";
 import router from "../modules/router";
 
 const projfns = () => {
-    JSON.parse(localStorage.getItem('projects')).forEach((element, i) => {
-        if (!document.getElementById('projectsul')) {
-    
-            const projnavul = elemcreater({ prop: `ul#projectsul.projulhidden`, parentId: `projbtn` })
-        }
-        if (!document.getElementById(`projnav${i}`)) {
-            elemcreater({ prop: `li#projnav${i}`, parentId: 'projectsul', })
-            elemcreater({ prop: `a#proj_${i}link.projnavlink href='/Proj_todo_odin/project_${i}'`, parentId: `projnav${i}`, text: element.title })
+    if(JSON.parse(localStorage.getItem('projects'))){
 
-        }
-    });
-    if (localStorage.getItem('projects')) {
+        JSON.parse(localStorage.getItem('projects')).forEach((element, i) => {
+            if (!document.getElementById('projectsul')) {
+                const projnavul = elemcreater({ prop: `ul#projectsul.projulhidden`, parentId: `projbtn` })
+            }
+            if (!document.getElementById(`projnav${i}`)) {
+                elemcreater({ prop: `li#projnav${i}`, parentId: 'projectsul', })
+                elemcreater({ prop: `a#proj_${i}link.projnavlink href='/Proj_todo_odin/project_${i}'`, parentId: `projnav${i}`, text: element.title })
+                
+            }
+        });
+    if (JSON.parse(localStorage.getItem('projects'))[0]) {
         let rotationdeg = 0
         document.getElementById('projectbtn').addEventListener('click', () => {
             document.querySelectorAll('.linkbtn').forEach(el => {
@@ -36,7 +37,7 @@ const projfns = () => {
                 img.style.transform = `rotate(${rotationdeg}deg)`;
             }
         })
-       
+        
     }
     const projNavLink = document.querySelectorAll('.projnavlink')
     projNavLink.forEach(e => {
@@ -46,5 +47,6 @@ const projfns = () => {
             projectsmastercomp(e.target.getAttribute('href'))
         })
     })
+}
 }
 export default projfns

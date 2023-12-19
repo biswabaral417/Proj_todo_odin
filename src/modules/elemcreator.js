@@ -1,5 +1,4 @@
-const elemcreater=({prop,parentId,text})=>{
-    console.log(prop)
+const elemcreater=({prop,parentId,text,valu})=>{
     const element = document.createElement(prop.trim().match(/^\s*(\w+)?/)[0])//create an element 
     element.id = (prop.match(/\b\w+(?:-\w+)?(?:-\w+)?\b/g)[1])//add id to element 
     prop.match(/\.\w+/g)&&(prop.match(/\.\w+/g).forEach(item => {
@@ -11,6 +10,7 @@ const elemcreater=({prop,parentId,text})=>{
     prop.match(/placeholder='[^']*'/)&&element.setAttribute('placeholder',prop.match(/placeholder='([^']*)'/)[1])
     prop.match(/value='[^']*'/)&&element.setAttribute('value',prop.match(/value='([^']*)'/)[1])
     prop.match(/type='[^']*'/)&&element.setAttribute('type',prop.match(/type='([^']*)'/)[1])
+    valu&&(element.value=valu)
     return element
 }
 export default elemcreater
