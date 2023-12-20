@@ -23,6 +23,6 @@ const testlocalStorage=(type)=> {
         storage.length !== 0
       );
     }
-  }
-  export default testlocalStorage
+  };
+  export default testlocalStorage;
   

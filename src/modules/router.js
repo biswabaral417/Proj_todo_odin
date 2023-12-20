@@ -1,5 +1,5 @@
 const router=(hrf)=>{
-    history.replaceState(null,null,hrf)
-}
+    history.replaceState(null,null,hrf);
+};
 
-export default router
+export default router;
